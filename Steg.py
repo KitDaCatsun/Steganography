@@ -46,15 +46,15 @@ def extract(imageName, end):
         for j in range(3):
             message += str(pixel[j])[-1]
 
-        print(ASCII_to_text(message))
-
         if ASCII_to_text(message).endswith(end):
             break
 
     return ASCII_to_text(message).strip(end)
 
 
-print('Output as a png so that there is no compression')
+print('This should work with any ascii characters')
+print('The message can be as large as the image resolution')
+print('Output as a .png so that there is no compression')
 print('Add some unique characters to the end of the input text so that it knows when to stop')
 print('To learn about Steganography: https://www.youtube.com/watch?v=TWEXCYQKyDc')
 
@@ -74,6 +74,6 @@ while True:
         end = input('Ending characters (END): ')
         print('Extracting...')
         message = extract(image, end)
-        print('Done. Message:')
+        print('Done. Message:\n')
         print(message)
         print()
